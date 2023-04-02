@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
+  <link rel="stylesheet" href="signup.css">
+  <SCRIPT type="text/javascript">
+    window.history.forward();
+    function noBack() { window.history.forward(); }
+</SCRIPT>
+</head>
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload=" ">
+  <div class="signupFrm">
+    <div class="wrapper">
+    <form action="loggedin.php" method="post">
+      <h1 class="title">Log In</h1>
+
+      <div class="inputContainer">
+        <input type="email" class="input" name = "email" id = "email" placeholder="a">
+        <label for="" class="label">Email</label>
+
+        <p class="err-msg">
+    
+<?php if($emailErr!=1){ echo $emailErr; } ?>
+            </p>
+      </div>
+
+      <div class="inputContainer">
+        <input type="password" class="input" name = "password" id = "pswd1" placeholder="a">
+        <label for="" class="label">Password</label>
+        <span id = "message1" style="color:red"> </span> <br><br>  
+        <p class="err-msg">
+                
+<?php if($passErr!=1){ echo $passErr; } ?>
+            </p>
+      </div> 
+
+
+      <input type="submit" class="submitBtn" value="Log In">
+    </form>
+    <a class="submitBtn" href = "signup.php">SignUp</a>
+      
+    </div>
+  </div>
+
+</body>
+</html>
